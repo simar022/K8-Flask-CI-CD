@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   name: flask-ingress
   annotations:
+    # Essential for Nginx to route traffic correctly
     nginx.ingress.kubernetes.io/rewrite-target: /
+    # Force SSL redirection
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
 spec:
+  ingressClassName: nginx  # Required in newer K8s versions
   tls:
   - hosts:
       - myapp.local
