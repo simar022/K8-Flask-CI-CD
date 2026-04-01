@@ -1,0 +1,3 @@
+# Ignore TLS certificate and key files
+tls.crt
+tls.key
